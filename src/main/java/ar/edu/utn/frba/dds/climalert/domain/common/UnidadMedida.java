@@ -6,5 +6,7 @@ public enum UnidadMedida {
   Hectopascales,
   Milimetros,
   Kilometros,
-  Grados
+  Grados,
+  Porcentaje,
+  IndiceUV
 }
