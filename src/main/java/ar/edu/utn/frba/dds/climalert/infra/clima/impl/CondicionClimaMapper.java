@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.dds.climalert.infra.clima.impl;
 
 import ar.edu.utn.frba.dds.climalert.domain.clima.CondicionClima;
+
 import java.util.Map;
 
 // Te amo copilot

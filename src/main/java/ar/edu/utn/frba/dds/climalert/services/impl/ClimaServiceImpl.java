@@ -26,7 +26,7 @@ public class ClimaServiceImpl implements ClimaService {
     log.info("Registrando clima actual de {}({})", localidadConfig.nombre(), localidadConfig.id());
     var clima = proveedorClima.obtenerClimaActual(localidadConfig.latitud(), localidadConfig.longitud());
 
-    if(reporteClimaRepository.existeClima(localidadConfig.id(), clima.tiempo())) {
+    if (reporteClimaRepository.existeClima(localidadConfig.id(), clima.tiempo())) {
       log.warn("Ya se ha registrado el clima para la hora {} en {}({})", clima.tiempo(), localidadConfig.nombre(), localidadConfig.id());
       return;
     }

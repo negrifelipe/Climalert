@@ -3,6 +3,7 @@ package ar.edu.utn.frba.dds.climalert.repositories.impl;
 import ar.edu.utn.frba.dds.climalert.domain.clima.CondicionClima;
 import ar.edu.utn.frba.dds.climalert.domain.clima.ReporteClima;
 import ar.edu.utn.frba.dds.climalert.domain.common.UnidadMedida;
+
 import java.time.LocalDateTime;
 
 /* vendría a simular la tabla de la db para la entidad de dominio,

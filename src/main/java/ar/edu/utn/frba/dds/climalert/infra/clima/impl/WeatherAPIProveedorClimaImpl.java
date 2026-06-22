@@ -3,7 +3,6 @@ package ar.edu.utn.frba.dds.climalert.infra.clima.impl;
 import ar.edu.utn.frba.dds.climalert.config.weatherapi.WeatherAPIConfig;
 import ar.edu.utn.frba.dds.climalert.infra.clima.Clima;
 import ar.edu.utn.frba.dds.climalert.infra.clima.ProveedorClima;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -31,7 +30,7 @@ public class WeatherAPIProveedorClimaImpl implements ProveedorClima {
         .toUri();
 
     var response = restTemplate.getForEntity(uri, WeatherAPIResponse.class);
-    if(!response.getStatusCode().is2xxSuccessful()) {
+    if (!response.getStatusCode().is2xxSuccessful()) {
       throw new RuntimeException("No se ha podido obtener el clima desde el proveedor WeatherAPI status code " + response.getStatusCode());
     }
 
