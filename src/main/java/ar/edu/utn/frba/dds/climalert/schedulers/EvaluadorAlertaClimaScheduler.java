@@ -12,27 +12,16 @@ import java.util.concurrent.TimeUnit;
 @Component
 @Slf4j
 public class EvaluadorAlertaClimaScheduler {
-  private final ReporteClimaRepository reporteClimaRepository;
   private final AlertaClimaService alertaClimaService;
-  private final LocalidadConfig localidadConfig;
 
-  public EvaluadorAlertaClimaScheduler(ReporteClimaRepository reporteClimaRepository, AlertaClimaService alertaClimaService, LocalidadConfig localidadConfig) {
-    this.reporteClimaRepository = reporteClimaRepository;
+  public EvaluadorAlertaClimaScheduler(AlertaClimaService alertaClimaService) {
     this.alertaClimaService = alertaClimaService;
-    this.localidadConfig = localidadConfig;
   }
 
   @Scheduled(fixedRate = 1, timeUnit = TimeUnit.MINUTES)
   public void evaluarUltimoClimaDisponible() {
     try {
-      var reporteClima = reporteClimaRepository.obtenerUltimo(localidadConfig.id());
-
-      if (reporteClima.isEmpty()) {
-        log.info("No hay reportes de clima disponibles para evaluar alertas en {}({})", localidadConfig.nombre(), localidadConfig.id());
-        return;
-      }
-
-      alertaClimaService.evaluar(reporteClima.get());
+      alertaClimaService.evaluarClimaActual();
     } catch (Exception e) {
       log.error("Error al evaluar alertas climaticas: {}", e.getMessage(), e);
     }
