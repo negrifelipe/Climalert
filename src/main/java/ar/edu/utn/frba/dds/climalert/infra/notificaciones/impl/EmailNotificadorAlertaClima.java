@@ -1,10 +1,10 @@
-package ar.edu.utn.frba.dds.climalert.infra.notificaciones;
+package ar.edu.utn.frba.dds.climalert.infra.notificaciones.impl;
 
 import ar.edu.utn.frba.dds.climalert.config.alertas.AlertaEmailConfig;
 import ar.edu.utn.frba.dds.climalert.domain.alertas.AlertaClima;
 import ar.edu.utn.frba.dds.climalert.domain.common.Unidad;
 import ar.edu.utn.frba.dds.climalert.infra.mail.EnviadorMail;
-import ar.edu.utn.frba.dds.climalert.services.NotificadorAlertaClima;
+import ar.edu.utn.frba.dds.climalert.infra.notificaciones.NotificadorAlertaClima;
 import org.springframework.stereotype.Component;
 
 @Component

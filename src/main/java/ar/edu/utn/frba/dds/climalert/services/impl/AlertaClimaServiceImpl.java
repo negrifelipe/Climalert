@@ -2,11 +2,10 @@ package ar.edu.utn.frba.dds.climalert.services.impl;
 
 import ar.edu.utn.frba.dds.climalert.config.localidad.LocalidadConfig;
 import ar.edu.utn.frba.dds.climalert.domain.alertas.EvaluadorAlertaClima;
-import ar.edu.utn.frba.dds.climalert.domain.clima.ReporteClima;
 import ar.edu.utn.frba.dds.climalert.repositories.AlertaClimaRepository;
 import ar.edu.utn.frba.dds.climalert.repositories.ReporteClimaRepository;
 import ar.edu.utn.frba.dds.climalert.services.AlertaClimaService;
-import ar.edu.utn.frba.dds.climalert.services.NotificadorAlertaClima;
+import ar.edu.utn.frba.dds.climalert.infra.notificaciones.NotificadorAlertaClima;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
